@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPICE BERG | Culinary Theater</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Dynamic Background Layers -->
+    <div class="ambient-bg" id="ambientBg"></div>
+    <div class="particle-field" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="logo">SPICE BERG</div>
+        <div class="nav-links">
+            <a href="#experience">Experience</a>
+            <a href="#menu">Menu</a>
+            <a href="#reservation">Reserve</a>
+        </div>
+        <div class="theme-indicator" id="themeIndicator">Classic Noir</div>
+    </nav>
+
+    <!-- Hero Section with Parallax -->
+    <section class="hero-section" id="hero">
+        <div class="parallax-layer layer-back" id="heroBack"></div>
+        <div class="parallax-layer layer-mid" id="heroMid"></div>
+        <div class="hero-content layer-front">
+            <h1 class="glitch-text" data-text="SPICE BERG">SPICE BERG</h1>
+            <p class="tagline">Where Flavor Meets Visual Symphony</p>
+            <div class="scroll-indicator">
+                <span>Scroll to Explore</span>
+                <div class="mouse-icon"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Preview Section (The Interactive Core) -->
+    <section class="preview-section" id="experience">
+        <div class="section-header">
+            <h2>Live Preview</h2>
+            <p>Swipe to transform the atmosphere</p>
+        </div>
+
+        <div class="dish-showcase">
+            <div class="dish-track" id="dishTrack">
+                <!-- Dish 1: Midnight Truffle -->
+                <div class="dish-card" data-theme="truffle" data-color="#1a1a1a" data-accent="#d4af37">
+                    <div class="dish-visual">
+                        <div class="dish-image truffle-glow"></div>
+                        <div class="floating-elements">
+                            <span class="float-item">🍄</span>
+                            <span class="float-item">✨</span>
+                        </div>
+                    </div>
+                    <div class="dish-info">
+                        <h3>Midnight Truffle</h3>
+                        <p class="dish-desc">Black squid ink risotto with gold leaf</p>
+                        <div class="dish-meta">
+                            <span class="price">$48</span>
+                            <span class="tag">Signature</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 2: Sunset Saffron -->
+                <div class="dish-card" data-theme="saffron" data-color="#ff6b35" data-accent="#ffd93d">
+                    <div class="dish-visual">
+                        <div class="dish-image saffron-glow"></div>
+                        <div class="floating-elements">
+                            <span class="float-item">🌅</span>
+                            <span class="float-item">🌶️</span>
+                        </div>
+                    </div>
+                    <div class="dish-info">
+                        <h3>Sunset Saffron</h3>
+                        <p class="dish-desc">Persian jeweled rice with pomegranate</p>
+                        <div class="dish-meta">
+                            <span class="price">$42</span>
+                            <span class="tag">Spicy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 3: Ocean Pearl -->
+                <div class="dish-card" data-theme="ocean" data-color="#0066cc" data-accent="#00d9ff">
+                    <div class="dish-visual">
+                        <div class="dish-image ocean-glow"></div>
+                        <div class="floating-elements">
+                            <span class="float-item">🦪</span>
+                            <span class="float-item">🌊</span>
+                        </div>
+                    </div>
+                    <div class="dish-info">
+                        <h3>Ocean Pearl</h3>
+                        <p class="dish-desc">Tasmanian oysters with yuzu pearls</p>
+                        <div class="dish-meta">
+                            <span class="price">$36</span>
+                            <span class="tag">Fresh</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 4: Ember Ember -->
+                <div class="dish-card" data-theme="ember" data-color="#8b0000" data-accent="#ff4500">
+                    <div class="dish-visual">
+                        <div class="dish-image ember-glow"></div>
+                        <div class="floating-elements">
+                            <span class="float-item">🔥</span>
+                            <span class="float-item">🥩</span>
+                        </div>
+                    </div>
+                    <div class="dish-info">
+                        <h3>Ember & Smoke</h3>
+                        <p class="dish-desc">Wagyu A5 with charred scallion</p>
+                        <div class="dish-meta">
+                            <span class="price">$85</span>
+                            <span class="tag">Grill</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button class="nav-arrow prev" id="prevBtn">←</button>
+            <button class="nav-arrow next" id="nextBtn">→</button>
+            
+            <!-- Progress Indicator -->
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <div class="swipe-hint">
+            <span class="swipe-text">← Swipe to change atmosphere →</span>
+        </div>
+    </section>
+
+    <!-- Menu Grid Section -->
+    <section class="menu-section" id="menu">
+        <div class="parallax-bg menu-parallax"></div>
+        <div class="menu-content">
+            <h2>Curated Menu</h2>
+            <div class="menu-grid">
+                <div class="menu-item" data-parallax-speed="0.5">
+                    <div class="item-image"></div>
+                    <h4>Amuse-Bouche</h4>
+                    <p>Compressed watermelon, feta foam</p>
+                </div>
+                <div class="menu-item" data-parallax-speed="0.8">
+                    <div class="item-image"></div>
+                    <h4>Entrée</h4>
+                    <p>Scallop carpaccio, citrus reduction</p>
+                </div>
+                <div class="menu-item" data-parallax-speed="0.3">
+                    <div class="item-image"></div>
+                    <h4>Principal</h4>
+                    <p>Duck confit, cherry gastrique</p>
+                </div>
+                <div class="menu-item" data-parallax-speed="0.6">
+                    <div class="item-image"></div>
+                    <h4>Dessert</h4>
+                    <p>Deconstructed tiramisu sphere</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section class="reservation-section" id="reservation">
+        <div class="reservation-card">
+            <h2>Book Your Experience</h2>
+            <form class="booking-form">
+                <div class="input-group">
+                    <input type="text" placeholder="Name" required>
+                    <span class="input-border"></span>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Email" required>
+                    <span class="input-border"></span>
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <input type="date" required>
+                    </div>
+                    <div class="input-group">
+                        <select>
+                            <option>2 Guests</option>
+                            <option>4 Guests</option>
+                            <option>6+ Guests</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <span>Confirm Reservation</span>
+                    <div class="btn-bg"></div>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">SPICE BERG</div>
+            <div class="footer-links">
+                <a href="#">Instagram</a>
+                <a href="#">Reservations</a>
+                <a href="#">Careers</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
